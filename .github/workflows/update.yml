@@ -42,11 +42,11 @@ jobs:
           echo "::set-output name=value::${TIMESTAMP}"
         
       # Enable tmate debugging of manually-triggered workflows if the input option was provided
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
-        env:
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+      #- name: Setup tmate session
+        #uses: mxschmitt/action-tmate@v3
+        # if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
+        #env:
+         # SECRETS_CONTEXT: ${{ toJson(secrets) }}
       
 
       - name: Update submodules
